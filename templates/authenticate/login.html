@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% block title %}
+Log In
+{% endblock %}
+
+    {% block home %}
+    <li><a class="" href="{% url 'home' %}">Home</a></li>
+    {% endblock %}
+
+	{% block login %}
+	<li class="active" ><a href="{% url 'login' %}"><i class="fa fa-fw fa-user"></i> Login</a></li>
+	{% endblock %}
+{% block content %}
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+
+<div class="container">
+<br>
+	<p class="text-center">For more information  <a href="http://bootstrap-ecommerce.com/"> Bootstrap-ecommerce.com</a></p>
+<hr>
+
+<div class="card bg-light">
+<article class="card-body mx-auto" style="max-width: 400px;">
+	<h4 class="card-title mt-3 text-center">Log in your Account</h4>
+	<br>
+    	<p class="text-success text-center">{{ error_user }}</p>
+
+	<form method="post" action="{% url 'login' %}">
+		{% csrf_token %}
+	<div class="form-group input-group">
+		<div class="input-group-prepend">
+		    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+		 </div>
+        <input name="username" class="form-control" placeholder="user name" type="text">
+    </div>
+
+    <div class="form-group input-group">
+    	<div class="input-group-prepend">
+		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+		</div>
+        <input name="password" class="form-control" placeholder="your password" type="password">
+    </div> <!-- form-group// -->
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary btn-block"> Log in  </button>
+    </div> <!-- form-group// -->
+    <p class="text-center">Have no an account? <a href="{% url 'registration' %}">Registration</a> </p>
+</form>
+</article>
+</div>
+</div>
+
+
+<!--container end.//-->
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+<br><br><br>
+{% endblock %}

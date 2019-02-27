@@ -1,0 +1,1 @@
+Basically this site is a CV JOB portal, where anyone could be drop his\her CV with catagory and anyone caould be offer a JOB with details for his own or other company. Its much pretty useful for student and alumni communication in a University.

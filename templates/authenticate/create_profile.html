@@ -1,0 +1,196 @@
+{% extends 'base.html' %}
+    {% block home %}
+    <li><a class="active" href="{% url 'home' %}">Home</a></li>
+    {% endblock %}
+
+
+
+
+{% block content %}
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'profile.css' %}">
+<br>
+<h2 style="text-align:center">Create Profile</h2>
+
+<b style="text-align:center">{{ id }} {{ phone }}</b>
+
+<div class="container">
+  <form action="{% url 'profile' %}" method="post">
+    {% csrf_token %}
+  <div class="row">
+    <div class="col-25">
+      <label for="fname">First Name <i style="color:red">*</i> </label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="fname" pattern=[A-Za-z_]* name="firstname" placeholder="Your first name" required>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-25">
+      <label for="lname">Last Name <i style="color:red">*</i> </label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="lname" pattern=[A-Za-z_]* name="lastname" placeholder="Your last name.." required>
+    </div>
+  </div>
+    <div class="row">
+    <div class="col-25">
+      <label for="fname">Email <i style="color:red">*</i> </label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="fname" name="email" placeholder="Your mail" required>
+    </div>
+  </div>
+    <div class="row">
+    <div class="col-25">
+      <label for="fname">Id Number <i style="color:red">*</i> </label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="fname" pattern="\ddd\-dd\-d*" name="id" placeholder="ID '152-35-1285" required>
+    </div>
+  </div>
+    <div class="row">
+    <div class="col-25">
+      <label for="fname">Phone Number</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="fname" pattern="\d{11}" name="phone" placeholder="01711112233" >
+    </div>
+  </div>
+    <div class="row">
+    <div class="col-25">
+      <label for="fname"> Working side <i style="color:red">*</i> </label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="fname" pattern=[A-Za-z_]*  name="working_side" placeholder="Web develop,Data analysis" required>
+    </div>
+  </div>
+        <div class="row">
+    <div class="col-25">
+      <label for="fname">Skill <i style="color:red">*</i> </label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="fname" pattern=[A-Za-z_]* name="skill" placeholder="Node.js, Django, Laravel, Scikit-learn" required>
+    </div>
+  </div>
+    <div class="row">
+    <div class="col-25">
+      <label for="fname"> Facebook Link</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="fname" name="facebook" placeholder="https://www.facebook.com/xxx.yyy?ref=bookmarks" >
+    </div>
+  </div>
+    <div class="row">
+    <div class="col-25">
+      <label for="fname"> Github Link</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="fname"  name="github" placeholder="https://github.com/xxxx" >
+    </div>
+  </div>
+    <div class="row">
+    <div class="col-25">
+      <label for="fname"> Linkedin Link </label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="fname"  name="linkedin" placeholder="Yhttps://www.linkedin.com/in/xxxx/" >
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-25">
+      <label for="country">Batch <i style="color:red">*</i> </label>
+    </div>
+    <div class="col-75">
+      <select id="country" name="batch" required>
+        <option value="">Select Batch</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+        <option value="15">15</option>
+        <option value="16">16</option>
+        <option value="17">17</option>
+        <option value="18">18</option>
+        <option value="19">19</option>
+        <option value="20">20</option>
+        <option value="21">21</option>
+        <option value="22">22</option>
+        <option value="23">23</option>
+        <option value="24">24</option>
+        <option value="25">25</option>
+        <option value="26">26</option>
+        <option value="27">27</option>
+        <option value="28">28</option>
+      </select>
+    </div>
+  </div>
+      <div class="row">
+    <div class="col-25">
+      <label for="country">Gender <i style="color:red">*</i> </label>
+    </div>
+    <div class="col-75">
+      <select id="country" name="gender" required>
+        <option value="">Select Gender</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+      </select>
+    </div>
+  </div>
+      <div class="row">
+    <div class="col-25">
+      <label for="country">Age <i style="color:red">*</i> </label>
+    </div>
+    <div class="col-75">
+      <select id="country" name="age" required>
+        <option value="">Select Age</option>
+        <option value="20">20</option>
+        <option value="21">21</option>
+        <option value="22">22</option>
+        <option value="23">23</option>
+        <option value="24">24</option>
+        <option value="25">25</option>
+        <option value="26">26</option>
+        <option value="27">27</option>
+        <option value="28">28</option>
+        <option value="29">29</option>
+        <option value="30">30</option>
+        <option value="31">31</option>
+        <option value="32">32</option>
+        <option value="33">33</option>
+        <option value="34">34</option>
+        <option value="35">35</option>
+      </select>
+    </div>
+  </div>
+    <div class="row">
+    <div class="col-25">
+      <label for="fname">Photo <i style="color:red">*</i> </label>
+    </div>
+    <div class="col-75">
+      <input type="file" id="fname" name="image" placeholder="Upload your photo" required>
+    </div>
+  </div>
+
+  <div class="row">
+    <input type="submit" value="Submit">
+  </div>
+  </form>
+</div>
+
+<br><br><br>
+<!--
+<script type="text/javascript">
+    var no_record_check = 1  // no_record_check **must** be an integer
+    if (no_record_check == 1) {
+    alert('Account Create Sucessfully');
+    }
+ </script>
+-->
+{% endblock %}
+
+
+

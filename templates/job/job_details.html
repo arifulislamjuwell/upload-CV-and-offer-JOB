@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+    {% block home %}
+    <li><a class="active" href="{% url 'home' %}">Home</a></li>
+    {% endblock %}
+{% block content %}
+{{ job.company }}
+<br><br><br>
+{% endblock %}

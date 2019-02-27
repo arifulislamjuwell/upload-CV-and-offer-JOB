@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block title %}
+List by catagory
+{% endblock %}
+
+    {% block home %}
+    <li><a class="" href="{% url 'home' %}">Home</a></li>
+    {% endblock %}
+
+{% block content %}
+<br>
+<div class="list-group" style="width:500px; margin:0 auto;">
+  <a style="color:white; text-align:center" class="list-group-item list-group-item-action active">
+    {{catagory.name}}
+  </a> <br>
+
+    {% for cvs in cv %}
+
+    <div class="card mb-3" style="max-width: 540px;">
+  <div class="row no-gutters">
+    <div class="col-md-4">
+      <img src="..." class="card-img" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+          <h5><a class="card-title" href="{%url 'cv_detail' pk=cvs.pk  %}"> {{ cvs.skill }}</a></h5>
+        <p class="card-text"> by <a href="{% url 'show_profile' %}"> {{ cvs.user }}</a> </p>
+        <p class="card-text"><small class="text-muted">published: {{ cvs.publish_date }}</small></p>
+          </a>
+      </div>
+    </div>
+
+
+    </div>
+  </div>
+</div>
+    {% endfor %}
+<br><br><br>
+
+{% endblock %}
