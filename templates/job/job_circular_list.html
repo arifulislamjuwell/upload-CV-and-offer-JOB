@@ -4,9 +4,13 @@
     {% endblock %}
 
 {% block content %}
+<br>
+<form method="get" action="">
+    <p style="text-align:center"><input type="text" name="q" value="{{ request.get.q }}" placeholder="Search Job" ><input type="submit" value="Search"></p>
+</form>
 
 <div class="w3-container w3-lobster">
-  <p class="w3-xxxlarge" style="text-align:center">All Job Circular list</p>
+  <p class="w3-xxxlarge" style="text-align:center">All Job Circular list </p>
 </div>
 <hr>
 {% for jobs in job %}
@@ -17,7 +21,7 @@
 
   </div>
   <div class="card-footer text-muted">
-    2 days ago
+    {{ jobs.publication_Date }}
   </div>
 </div>
 {% endfor %}

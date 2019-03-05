@@ -2,6 +2,7 @@ from django.shortcuts import render,redirect,get_object_or_404
 from .models import *
 from django.contrib.auth.decorators import login_required
 from authenticate.models import Profile
+from django.db.models import Q
 # Create your views here.
 
 @login_required
@@ -43,6 +44,13 @@ def job_circular_list(request):
     templates= 'job/job_circular_list.html'
     job_circular= JobCircular.objects.all()
     job=job_circular.filter(approve='a')
+    query=request.GET.get('q')
+    if query:
+        job= job.filter(
+            Q(skill__icontains=query)|
+            Q(job_type__icontains=query)|
+            Q(company__icontains=query)
+        ).distinct()
     contex= {'job':job}
     return render(request,templates,contex)
 
@@ -99,6 +107,11 @@ def cv_catagory_post_list(request,slug):
     if slug:
         catagory= get_object_or_404(CvCatagory, slug=slug)
         cv= cv.filter(catagory = catagory, approve ='a')
+    query=request.GET.get('q')
+    if query:
+        cv= cv.filter(
+            Q(skill__icontains=query)
+        ).distinct()
     contex ={'catagories':catagories, 'cv':cv, 'catagory':catagory}
     return render(request,templates,contex)
 
