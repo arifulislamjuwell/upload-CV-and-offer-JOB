@@ -16,7 +16,7 @@
 {% for jobs in job %}
 <div class="card text-center">
   <div class="card-body">
-    <h6 class="card-title"> {{ jobs.job_type }}- skill need: {{ jobs.skill }} by <a href="{% url 'show_profile' %}"> {{ jobs.user }}</a> </h6>
+    <h6 class="card-title"> {{ jobs.job_type }}- skill need: {{ jobs.skill }} by <a href="{% url 'show_profile' pk=jobs.user.pk %}"> {{ jobs.user }}</a> </h6>
       <a href="{{ jobs.get_absolute_url }}" class="btn btn-primary">View details</a>
 
   </div>

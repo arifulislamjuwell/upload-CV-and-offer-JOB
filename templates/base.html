@@ -48,11 +48,18 @@
 	<div class="top-bar fixed">
         <ul class="topnav">
                     {% block home %}
-                    <li><a class="active" href="{% url 'home' %}">Home</a></li>
+                    <li><a class="" href="{% url 'home' %}">Home</a></li>
                     {% endblock %}
             {% if user.is_authenticated %}
-            <li><a href="{% url 'add_cv' %}">Upload your CV</a></li>
-            <li><a href="{% url 'add_job' %}">Add Job Offer</a></li>
+            {% block cv %}
+            <li><a class="" href="{% url 'add_cv' %}">Upload your CV</a></li>
+            {% endblock %}
+            {% block job %}
+            <li><a class="" href="{% url 'add_job' %}">Add Job Offer</a></li>
+            {% endblock %}
+            {% block profile %}
+            <li><a class="" href="{% url 'show_profile' pk=user.pk %}">Profile</a></li>
+            {% endblock %}
             {% endif %}
                 <div class ="right">
                     <li><a href="#contact"><i class="fa fa-fw fa-envelope"></i>Contact</a></li>

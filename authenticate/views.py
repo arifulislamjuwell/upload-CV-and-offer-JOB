@@ -97,10 +97,22 @@ def create_profile (request):
     else:
         return render(request,templates)
 
-def show_profile (request):
-    cv = Cv.objects.all()
-    profile= Profile.objects.all()
-
-    contex={'pro':profile}
+@login_required
+def show_profile (request,pk):
     templates= 'authenticate/show_profile.html'
+    cv = Cv.objects.all()
+
+    profile=Profile.objects.filter(user__pk=pk)
+
+    try:
+        p_name=profile.full_name
+    except:
+        p_name= request.user
+
+    contex={'profile':profile,'p_name':p_name}
     return render(request,templates,contex)
+
+@login_required
+def edit_remove_job_cv(request):
+    templates= 'authenticate/edit.html'
+    return render(request,templates)

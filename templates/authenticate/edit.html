@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'remove.css'%}">
+<nav id="navbar-example2" class="navbar navbar-light bg-light">
+  <a class="navbar-brand" href="#">You can easily remove or edit your CV or JOB</a>
+  <ul class="nav nav-pills">
+    <li class="nav-item">
+      <a class="nav-link" href="#fat">CV</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#mdo">JOB</a>
+    </li>
+  </ul>
+</nav>
+<div data-spy="scroll" data-target="#navbar-example2" data-offset="0">
+  <h4 id="fat" style="text-align:center">my CV</h4>
+    <div class="card">
+  <div class="card-body">
+    This is some text within a card body.
+  </div>
+</div>
+  <p></p>
+    <br>
+    <br>
+  <h4 id="mdo" style="text-align:center">my created JOB</h4>
+    <div class="card">
+  <div class="card-body">
+      <p>This is some text within a card body</p><b class="popup" onclick="myFunction()"> <button style="color:red" >Delete</button>
+  <span class="popuptext" id="myPopup">Are You Confirm?
+      <p> <button > Yes </button> <button> No </button></p>
+ </span></b>
+  </div>
+  </div>
+</div>
+
+
+<script>
+// When the user clicks on div, open the popup
+function myFunction() {
+  var popup = document.getElementById("myPopup");
+  popup.classList.toggle("show");
+}
+</script>
+{% endblock %}

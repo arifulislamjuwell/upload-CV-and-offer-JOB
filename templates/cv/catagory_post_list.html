@@ -28,7 +28,7 @@ List by catagory
     <div class="col-md-8">
       <div class="card-body">
           <h5><a class="card-title" href="{%url 'cv_detail' pk=cvs.pk  %}"> {{ cvs.skill }}</a></h5>
-        <p class="card-text"> by <a href="{% url 'show_profile' %}"> {{ cvs.user }}</a> </p>
+        <p class="card-text"> by <a href="{% url 'show_profile' pk=cvs.user.pk %}"> {{ cvs.user }}</a> </p>
         <p class="card-text"><small class="text-muted">published: {{ cvs.publish_date }}</small></p>
       </div>
     </div>

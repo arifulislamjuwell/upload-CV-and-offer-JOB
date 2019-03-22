@@ -1,13 +1,21 @@
 {% extends 'base.html' %}
 
+{% block profile %}
+<li><a class="active" href="{% url 'show_profile' pk=user.pk %}">Profile</a></li>
+{% endblock %}
+
+{% block title %}
+profile of {{ p_name }}
+{% endblock %}
+
 
 {% block content %}
 {% load static %}
+{% for profile in profile %}
 <link rel="stylesheet" type="text/css" href="{% static 'show_profile.css' %}">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-{% for profile in pro %}
 <div class="container emp-profile">
             <form method="post">
                 <div class="row">
@@ -37,9 +45,13 @@
                             </ul>
                         </div>
                     </div>
+
                     <div class="col-md-2">
-                        <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile"/>
+                        <a href="{% url 'profile' %}" ><input type="button" class="profile-edit-btn" name="btnAddMore" value="Edit Profile"/></a>
+                        <hr>
+                        <a href="{% url 'edit_cv_job' %}"> <input type="button" class="profile-edit-btn" name="btnAddMore" value="Edit CV JOB"/></a>
                     </div>
+
                 </div>
                 <div class="row">
                     <div class="col-md-4">
@@ -127,7 +139,8 @@
             </form>
 </div>
 
-{% endfor %}
+
 <br><br><br>
+{% endfor %}
 
 {% endblock %}
