@@ -9,12 +9,10 @@ from django.db.models import Q
 def add_job(request):
     templates ='job/add_job.html'
     contex={'error_input':'You have to input all field with data'}
-    print(request.user)
 
     check_create_user_profile= get_object_or_404(Profile,user= request.user )
 
     ccup=check_create_user_profile.page_permission
-    print (ccup)
     if ccup ==str(1):
 
         if request.method == 'POST':

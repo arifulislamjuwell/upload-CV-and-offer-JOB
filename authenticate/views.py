@@ -3,7 +3,7 @@ from django.contrib.auth.decorators import login_required
 from .models import *
 from django.shortcuts import render,redirect,get_object_or_404
 from authenticate.models import Profile
-from jobcv.models import Cv
+from jobcv.models import Cv,JobCircular
 # Create your views here.
 
 def registration(request):
@@ -102,17 +102,46 @@ def show_profile (request,pk):
     templates= 'authenticate/show_profile.html'
     cv = Cv.objects.all()
 
-    profile=Profile.objects.filter(user__pk=pk)
+    check_create_user_profile= get_object_or_404(Profile,user= request.user )
+    ccup=check_create_user_profile.page_permission
+    if ccup ==str(1):
+        profile=Profile.objects.filter(user__pk=pk)
+        try:
+            p_name=profile.full_name
+        except:
+            p_name= request.user
 
-    try:
-        p_name=profile.full_name
-    except:
-        p_name= request.user
-
-    contex={'profile':profile,'p_name':p_name}
-    return render(request,templates,contex)
+        contex={'profile':profile,'p_name':p_name}
+        return render(request,templates,contex)
+    else:
+        return redirect('profile')
 
 @login_required
-def edit_remove_job_cv(request):
+def edit_job_cv(request):
+
     templates= 'authenticate/edit.html'
-    return render(request,templates)
+
+    cv=Cv.objects.filter(user=request.user)
+    job=JobCircular.objects.filter(user=request.user)
+
+    if job and cv:
+        context= {'userjob':job,'usercv':cv}
+    elif not cv and not job:
+        context={'joberror':'You have no any JOB','cverror':'You have no any CV'}
+    elif job and not cv:
+        context={'userjob':job,'cverror':'You have no any CV'}
+    elif not job and cv:
+        context={'usercv':cv,'joberror':'You have no any JOB'}
+    return render(request,templates,context)
+
+@login_required
+def delete_job(request,pk):
+    if request.method == 'POST':
+        JobCircular.objects.get(pk=pk).delete()
+    return redirect('edit_cv_job')
+
+@login_required
+def delete_cv(request,pk):
+    if request.method == 'POST':
+        Cv.objects.get(pk=pk).delete()
+    return redirect('edit_cv_job')

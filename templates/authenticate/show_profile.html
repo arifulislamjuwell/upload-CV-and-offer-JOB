@@ -47,9 +47,11 @@ profile of {{ p_name }}
                     </div>
 
                     <div class="col-md-2">
+                        {% if profile.user == user %}
                         <a href="{% url 'profile' %}" ><input type="button" class="profile-edit-btn" name="btnAddMore" value="Edit Profile"/></a>
                         <hr>
                         <a href="{% url 'edit_cv_job' %}"> <input type="button" class="profile-edit-btn" name="btnAddMore" value="Edit CV JOB"/></a>
+                        {% endif %}
                     </div>
 
                 </div>

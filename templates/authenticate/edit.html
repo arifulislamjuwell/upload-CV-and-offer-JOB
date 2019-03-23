@@ -15,24 +15,44 @@
   </ul>
 </nav>
 <div data-spy="scroll" data-target="#navbar-example2" data-offset="0">
-  <h4 id="fat" style="text-align:center">my CV</h4>
+  <h4 id="fat" style="text-align:center">my CV </h4>
+     <p style="text-align:center;color:orange"><b>{{ cverror }}</b> </p>
+  {% for cv in usercv %}
     <div class="card">
   <div class="card-body">
-    This is some text within a card body.
+ {{ cv.skill }} - {{ cv.publish_date }} <b class="popup" onclick="myFunction1()"> <button style="color:red" >Delete</button>
+  <span class="popuptext" id="myPopup1">Are You Confirm?
+          <p> <a href="javascript:{document.getElementById('delete').submit()}"> Yes</a> OR  <a href="" >No</a> </p>
+
+<form id="delete" action="{% url 'cvdelete' pk=cv.pk %}" method="post">
+  {% csrf_token %}
+  <input type="hidden">
+</form>
+ </span></b>
   </div>
 </div>
+  {% endfor %}
   <p></p>
     <br>
     <br>
   <h4 id="mdo" style="text-align:center">my created JOB</h4>
+  <p style="text-align:center;color:orange"><b>{{ joberror }}</b> </p>
+    {% for job in userjob %}
     <div class="card">
   <div class="card-body">
-      <p>This is some text within a card body</p><b class="popup" onclick="myFunction()"> <button style="color:red" >Delete</button>
+      {{ joberror }} {{ job.company }} - {{ job.publication_Date }} - {{ job.post_name }}<b class="popup" onclick="myFunction()"> <button style="color:red" >Delete</button>
   <span class="popuptext" id="myPopup">Are You Confirm?
-      <p> <button > Yes </button> <button> No </button></p>
+    <p> <a href="javascript:{document.getElementById('delete1').submit()}"> Yes</a> OR  <a href="" >No</a> </p>
+l
+<form id="delete1" action="{% url 'jobdelete' pk=job.pk %}" method="post">
+  {% csrf_token %}
+  <input type="hidden">
+</form>
+
  </span></b>
   </div>
   </div>
+    {% endfor %}
 </div>
 
 
@@ -42,5 +62,10 @@ function myFunction() {
   var popup = document.getElementById("myPopup");
   popup.classList.toggle("show");
 }
+function myFunction1() {
+  var popup = document.getElementById("myPopup1");
+  popup.classList.toggle("show");
+}
 </script>
 {% endblock %}
+
