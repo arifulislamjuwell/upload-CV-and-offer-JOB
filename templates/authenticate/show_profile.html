@@ -11,7 +11,9 @@ profile of {{ p_name }}
 
 {% block content %}
 {% load static %}
+
 {% for profile in profile %}
+
 <link rel="stylesheet" type="text/css" href="{% static 'show_profile.css' %}">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
@@ -21,11 +23,12 @@ profile of {{ p_name }}
                 <div class="row">
                     <div class="col-md-4">
                         <div class="profile-img">
-                            <img src="" alt=""/>
-                            <div class="file btn btn-lg btn-primary">
+                            <img style="height:200px; width:200px" src="{{profile.image.url }}" alt=""/>
+                            <!--<div class="file btn btn-lg btn-primary">
+
                                 Change Photo
                                 <input type="file" name="file"/>
-                            </div>
+                            </div>-->
                         </div>
                     </div>
                     <div class="col-md-6">
