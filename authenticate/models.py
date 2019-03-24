@@ -12,7 +12,7 @@ class Profile(models.Model):
     mobile_number=models.CharField(max_length=15, blank=True)
     gender=models.CharField(max_length=20,blank=True)
     age=models.CharField(max_length=5,blank=True)
-    image= models.ImageField(upload_to='profile/',blank=True)
+    image= models.FileField(upload_to='profile/')
     working=models.CharField(max_length=200,blank=True)
     skill=models.CharField(max_length=200,blank=True)
     facebook=models.CharField(max_length=200,blank=True)

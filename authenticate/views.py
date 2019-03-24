@@ -4,6 +4,7 @@ from .models import *
 from django.shortcuts import render,redirect,get_object_or_404
 from authenticate.models import Profile
 from jobcv.models import Cv,JobCircular
+from django.utils.datastructures import MultiValueDictKeyError
 # Create your views here.
 
 def registration(request):
@@ -58,7 +59,8 @@ def logout (request):
 def create_profile (request):
     templates= 'authenticate/create_profile.html'
     context={'id':'This ID alredy exist','phone':'This Number alredy exist'}
-    if request.method== 'POST':
+    if request.method== 'POST' and request.FILES['image']:
+
         post=Profile()
         try:
             id_test =Profile.objects.get(versity_id_number=request.POST['id'])
@@ -83,7 +85,9 @@ def create_profile (request):
         batch=post.batch=request.POST.get('batch')
         gender=post.gender=request.POST.get('gender')
         age=post.age=request.POST.get('age')
-        image=post.image=request.POST.get('image')
+
+        image=post.image=request.FILES['image']
+
         work=post.working=request.POST.get('working_side')
         skill= post.skill=request.POST.get('skill')
         facebook=post.facebook=request.POST.get('facebook')

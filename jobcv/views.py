@@ -3,6 +3,7 @@ from .models import *
 from django.contrib.auth.decorators import login_required
 from authenticate.models import Profile
 from django.db.models import Q
+from django.core.files.storage import FileSystemStorage
 # Create your views here.
 
 @login_required
@@ -68,7 +69,8 @@ def upload_cv(request):
     ccup=check_create_user_profile.page_permission
     if ccup ==str(1):
 
-        if request.method == 'POST':
+        if request.method == 'POST' and request.FILES['upload_file']:
+
             post=Cv()
             print('hi')
             position=request.POST['position']
@@ -78,7 +80,7 @@ def upload_cv(request):
             post.user= request.user
             post.skill= request.POST.get('skill')
             post.email= request.POST.get('email')
-            post.file= request.POST.get('upload_file')
+            post.file= request.FILES['upload_file']
             post.save()
 
             return redirect('home')
