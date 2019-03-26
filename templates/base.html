@@ -2,6 +2,8 @@
 <html>
 <head>
     {% load static %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'social.css' %}">
 	<title> {% block title %} Welcome to SWE family {% endblock %}</title>
     <!-- show profile -->
 
@@ -62,20 +64,20 @@
             {% endblock %}
             {% endif %}
                 <div class ="right">
-                    <li><a href="#contact"><i class="fa fa-fw fa-envelope"></i>Contact</a></li>
+                    <li><a href="#contact"><i class=""></i>Contact</a></li>
 
                     {% if user.is_authenticated %}
-                    <li class="" ><a href="javascript:{document.getElementById('logout').submit()}"><i class="fa fa-fw fa-user"></i> Logout</a></li>
+                    <li class="" ><a href="javascript:{document.getElementById('logout').submit()}"><i class=""></i> Logout</a></li>
                     <form id="logout" action="{% url 'logout' %}" method="post">
                         {% csrf_token %}
                         <input type="hidden">
                     </form>
                     {% else %}
                     {% block registration %}
-                    <li class="" ><a href="{% url 'registration' %}"><i class="fa fa-fw fa-user"></i> Registration</a></li>
+                    <li class="" ><a href="{% url 'registration' %}"><i class=""></i> Registration</a></li>
                     {% endblock %}
                     {% block login %}
-                    <li class="" ><a href="{% url 'login' %}"><i class="fa fa-fw fa-user"></i> Login</a></li>
+                    <li class="" ><a href="{% url 'login' %}"><i class=""></i> Login</a></li>
                     {% endblock %}
                     {% endif %}
                 </div>
@@ -92,20 +94,17 @@
     <div class="footer">
 <div class="bo-wrap clr4">
   <div class="bo-footer">
-    <div class="bo-footer-social"></div>
+    <div class="bo-footer-social">
+    </div>
   </div>
 </div>
 <div class="bo-wrap clr3">
   <div class="bo-footer">
     <div class="bo-footer-smap">
-        <a href="http://www.bangalionline.com/sitemap.php">Sitemap</a> | <a href="http://www.bangalionline.com/terms.php">Policy</a> | <a href="http://www.bangalionline.com/contact.php">Contact Us</a>
+        <a href="{% url 'home' %}">Home</a> | <a href="">Policy</a> | <a href="">Contact Us</a>
 	  </div>
 	  <div class="bo-footer-uonline">
-           <script id="_wautoy">var _wau = _wau || []; _wau.push(["small", "p6egqc1t5bze", "toy"]);
-(function() {var s=document.createElement("script"); s.async=true;
-s.src="http://widgets.amung.us/small.js";
-document.getElementsByTagName("head")[0].appendChild(s);
-})();</script>
+          <p style="color:white"> Updating... </p>
 	  </div>
 	  <div class="bo-footer-power">
       Powered By JK - <a href="http://www.jobaerulkaes.com/">Web &amp Apps Developer</a>
@@ -115,7 +114,7 @@ document.getElementsByTagName("head")[0].appendChild(s);
 </div>
 <div class="bo-wrap clr4">
   <div class="bo-footer">
-    <div class="bo-footer-copyright">&copy;2013 BangaliOnline.com  All rights reserved.</div>
+    <div class="bo-footer-copyright">&copy;2019 SWE department All rights reserved.</div>
   </div>
 </div>
     </div>

@@ -1,18 +1,18 @@
 /*##### Global Classes #####*/
 * {margin: 0;padding: 0;}
-body { font-family: arial; font-size: 16px;}
+body { font-family: arial; font-size: 16px; }
 
 .clearfix {clear: both;}
 .center {text-align: center;}
 .left {text-align: left;}
 .right {text-align: right;}
 
-.clr1 {background: #FFFFFF; color: #333743;}
-.clr2 {background: #F1F3F5; color: #8F94A3;}
-.clr3 {background: #3E4352; color: #BDC3CF;}
-.clr4 {background: #636A7D; color: #E3E7F2;}
-.clr5 {background: ; color: #F1F3F5;}
-.clr6 {background: ; color: #39B5A1;}
+.clr1 {background: #FFFFFF; color: black;}
+.clr2 {background: #F1F3F5; color: black;}
+.clr3 {background: #3E4352; color: black}
+.clr4 {background: #636A7D; color: black;}
+.clr5 {background: ; color: black;}
+.clr6 {background: ; color: black;}
 .clr7 {background: ; color: #D45245;}
 
 a {color: #BDC3CF; text-decoration: none;}
@@ -20,10 +20,12 @@ a:hover {color: #ffffff; text-decoration: underline;}
 a:visited{}
 
 /*##### Footer Structure #####*/
-.footer{  left: 0;
-   bottom: 0;
-   width: 100%;
-      position:fixed}
+.footer{
+left: 0;
+bottom: 0;
+width: 100%;
+position:fixed
+}
 .bo-wrap {clear:both; width: auto; }
 .bo-footer {
 display:block;

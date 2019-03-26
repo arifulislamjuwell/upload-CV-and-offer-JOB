@@ -13,6 +13,10 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 {% block content %}
 {% load static %}
+
+
+
+
      <div id="demo" class="carousel slide" data-ride="carousel">
 
         <!-- Indicators -->
@@ -47,7 +51,7 @@
                    <button type="button" onclick=" window.location.href= {% url 'cv_catagory' %}" class="btn btn-dark">CV or Resume</button>
                     <button type="button" onclick=" window.location.href= {% url 'job_list' %}" class="btn btn-dark">Job Circular</button>
                 </div>
-                <img src="{% static 'homepage_photo/frontgate.png' %}" alt="Flower2" width="10000" height="10000">
+                <img src="{% static 'homepage_photo/all.jpg' %}" alt="Flower2" width="10000" height="10000">
             </div>
             <div class="carousel-item">
               <div class="carousel-caption">
@@ -69,9 +73,7 @@
     </div>
 <br>
 
-
-<head>
-
+<!-- bottom home -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -85,46 +87,60 @@
       padding: 15px;
     }
   </style>
-</head>
 <br>
 
 <div class="container text-center">
   <div class="row">
     <div class="col-sm-3 well">
       <div class="well">
-        <p><a href="#">My Profile</a></p>
-        <img src="bird.jpg" class="img-circle" height="65" width="65" alt="Avatar">
-      </div>
-      <div class="well">
-        <p><a href="#">Interests</a></p>
+          <p><b>Demand of jobs 2019</b></p>
         <p>
-          <span class="label label-default">News</span>
-          <span class="label label-primary">W3Schools</span>
-          <span class="label label-success">Labels</span>
-          <span class="label label-info">Football</span>
-          <span class="label label-warning">Gaming</span>
-          <span class="label label-danger">Friends</span>
+          <span class="label label-success">Cybersecurity engineer</span>
+          <span class="label label-success">AI/machine learning engineer</span>
+          <span class="label label-success">Full stack developer</span>
+          <span class="label label-success">Data scientist</span>
+          <span class="label label-success">Python developer</span>
+          <span class="label label-success"> Java developer</span>
+            <span class="label label-success"> JavaScripts developer</span>
+            <span class="label label-success"> Cloud engineer</span>
+            <span class="label label-success"> Scrum master </span>
+            <span class="label label-success">  DevOps engineer</span>
         </p>
       </div>
-      <div class="alert alert-success fade in">
-        <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-        <p><strong>Ey!</strong></p>
-        People are looking at your profile. Find out who.
+
+        <div class="well">
+          <p><b>Demandable Programming Language For Job & Future</b></p>
+        <p>
+          <span class="label label-default"> Python</span>
+          <span class="label label-default"> Java</span>
+          <span class="label label-default"> C/C++</span>
+          <span class="label label-default"> JavaScript</span>
+          <span class="label label-default"> Go programming language</span>
+          <span class="label label-default"> R</span>
+            <span class="label label-default"> Swift</span>
+            <span class="label label-default"> PHP</span>
+            <span class="label label-default">  C#</span>
+            <span class="label label-default">  MATLAB</span>
+        </p>
       </div>
-      <p><a href="#">Link</a></p>
-      <p><a href="#">Link</a></p>
-      <p><a href="#">Link</a></p>
     </div>
     <div class="col-sm-7">
 
       <div class="row">
         <div class="col-sm-12">
-          <div class="panel panel-default text-left">
+          <div class="panel panel-default">
             <div class="panel-body">
-              <p contenteditable="true">Status: Feeling Blue</p>
-              <button type="button" class="btn btn-default btn-sm">
-                <span class="glyphicon glyphicon-thumbs-up"></span> Like
-              </button>
+              <p style="text-align:center" contenteditable="true"> Our Alumni Social Links </p>
+
+                <span >
+                    <a href="{{ fb.link }}" class="fa fa-facebook"></a>
+                    <a href="{{ t.link }}" class="fa fa-twitter"></a>
+                    <a href="{{ li.link }}" class="fa fa-linkedin"></a>
+                    <a href="{{ yt.link }}" class="fa fa-youtube"></a>
+                    <a href="{{ s.link }}" class="fa fa-skype"></a>
+                    <a href="{{ gm.link }}" class="fa fa-google"></a>
+                </span>
+
             </div>
           </div>
         </div>
@@ -133,75 +149,58 @@
       <div class="row">
         <div class="col-sm-3">
           <div class="well">
-           <p>John</p>
-           <img src="bird.jpg" class="img-circle" height="55" width="55" alt="Avatar">
+           <p>BOOOOO</p>
+           <img src="bird.jpg" class="img-circle" height="55" width="55" alt="">
           </div>
         </div>
         <div class="col-sm-9">
           <div class="well">
-            <p>Just Forgot that I had to mention something about someone to someone about how I forgot something, but now I forgot it. Ahh, forget it! Or wait. I remember.... no I don't.</p>
+            <p>Updating.....</p>
           </div>
         </div>
       </div>
       <div class="row">
         <div class="col-sm-3">
           <div class="well">
-           <p>Bo</p>
-           <img src="bandmember.jpg" class="img-circle" height="55" width="55" alt="Avatar">
+           <p>BOOOO</p>
+           <img src="bandmember.jpg" class="img-circle" height="55" width="55" alt="">
           </div>
         </div>
         <div class="col-sm-9">
           <div class="well">
-            <p>Just Forgot that I had to mention something about someone to someone about how I forgot something, but now I forgot it. Ahh, forget it! Or wait. I remember.... no I don't.</p>
+            <p> Updating.... </p>
           </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col-sm-3">
-          <div class="well">
-           <p>Jane</p>
-           <img src="bandmember.jpg" class="img-circle" height="55" width="55" alt="Avatar">
-          </div>
-        </div>
-        <div class="col-sm-9">
-          <div class="well">
-            <p>Just Forgot that I had to mention something about someone to someone about how I forgot something, but now I forgot it. Ahh, forget it! Or wait. I remember.... no I don't.</p>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-3">
-          <div class="well">
-           <p>Anja</p>
-           <img src="bird.jpg" class="img-circle" height="55" width="55" alt="Avatar">
-          </div>
-        </div>
-        <div class="col-sm-9">
-          <div class="well">
-            <p>Just Forgot that I had to mention something about someone to someone about how I forgot something, but now I forgot it. Ahh, forget it! Or wait. I remember.... no I don't.</p>
-          </div>
-        </div>
-      </div>
+
+
+
     </div>
     <div class="col-sm-2 well">
       <div class="thumbnail">
         <p>Upcoming Events:</p>
-        <img src="paris.jpg" alt="Paris" width="400" height="300">
-        <p><strong>Paris</strong></p>
-        <p>Fri. 27 November 2015</p>
-        <button class="btn btn-primary">Info</button>
+        <p><strong>Updating</strong></p>
+        <p> </p>
+        <button class="btn btn-primary"></button>
       </div>
       <div class="well">
-        <p>ADS</p>
+        <p>................</p>
+
       </div>
       <div class="well">
-        <p>ADS</p>
+        <p>....................</p>
       </div>
+        <div class="alert alert-success fade in">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+        <p><strong> Hey! </strong></p>
+       Upload your CV for batter opportunitie
+      </div>
+   <button onclick=" window.location.href= {% url 'add_cv' %}" type="button" class="btn btn-outline-success">Upload your CV</button>
     </div>
   </div>
 </div>
 <br><br><br>
-
+<!--  END BOTTOM HOME -->
     <!-- js for slide show -->
     <script src="{% static 'bootstrap.js' %}"></script>
     <script src="{% static 'jquery-3.3.1.min.js' %}"></script>

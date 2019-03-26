@@ -28,9 +28,8 @@ class Notice(models.Model):
         return reverse('notice_details', args=[self.slug])
 
 
-
 class Sociallink(models.Model):
     name= models.CharField(max_length=100)
-    link=models.URLField(max_length=300)
+    link=models.URLField(max_length=300, blank=True)
     def __str__(self):
         return self.name
