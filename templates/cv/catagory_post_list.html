@@ -8,6 +8,7 @@ List by catagory
     {% endblock %}
 
 {% block content %}
+{% load static %}
 <br>
 <form method="get" action="">
     <p style="text-align:center"><input type="text" name="q" value="{{ request.get.q }}" placeholder="Search Cv" ><input type="submit" value="Search"></p>
@@ -27,8 +28,9 @@ List by catagory
     </div>
     <div class="col-md-8">
       <div class="card-body">
-          <h5><a class="card-title" href="{%url 'cv_detail' pk=cvs.pk  %}"> {{ cvs.skill }}</a></h5>
-        <p class="card-text"> by <a href="{% url 'show_profile' pk=cvs.user.pk %}"> {{ cvs.user }}</a> </p>
+          <h4>My skill:  {{ cvs.skill }}</h4>
+          <p class="card-text"><a href="{{ cvs.file.url }}"> Click here for download CV or Resume </a></p>
+        <p class="card-text"> To watch my profile! Click <a href="{% url 'show_profile' pk=cvs.user.pk %}">{{ cvs.user }} </a> </p>
         <p class="card-text"><small class="text-muted">published: {{ cvs.publish_date }}</small></p>
       </div>
     </div>

@@ -91,9 +91,6 @@ def upload_cv(request):
         return redirect('profile')
 
 
-
-
-
 def cv_catagory_list(request):
     templates= 'cv/cv_catagory_list.html'
     catagory= CvCatagory.objects.all()
