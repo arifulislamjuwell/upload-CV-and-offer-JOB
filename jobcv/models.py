@@ -80,6 +80,7 @@ class Cv(models.Model):
     skill= models.CharField(max_length=300)
     publish_date= models.DateField(auto_now_add=True)
     file = models.FileField(upload_to='cv/')
+    image=models.FileField(upload_to='profile/')
 
     APPROVE= (
         ('a', 'approve'),

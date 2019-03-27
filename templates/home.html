@@ -1,21 +1,15 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block home %}
 <li><a class="active" href="{% url 'home' %}">Home</a></li>
 {% endblock %}
 
-
-
-<meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 {% block content %}
-{% load static %}
-
-
-
+  <link rel="stylesheet" type="text/css" href="{% static 'social.css' %}">
 
      <div id="demo" class="carousel slide" data-ride="carousel">
 
@@ -31,33 +25,61 @@
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <div class="carousel-caption">
+                    {% if user.is_authenticated %}
+                    <h3><b>  </b></h3>
+                    {% else %}
+                    <h4><b> Please Login To Watch Cv Or Jobcircular </b></h4>
+                    {% endif %}
                     <h1><b>Welcome to SWE alumni</b></h1>
+                    {% if user.is_authenticated %}
                     <button type="button" onclick=" window.location.href= {% url 'cv_catagory' %}" class="btn btn-dark">CV or Resume</button>
                     <button type="button" onclick=" window.location.href= {% url 'job_list' %}" class="btn btn-dark">Job Circular</button>
+                    {% endif %}
                 </div>
                 <img class="im1" src=" {% static 'homepage_photo/transport.png' %}" alt="Flower" width="100" height="10">
             </div>
             <div class="carousel-item">
                <div class="carousel-caption">
+                   {% if user.is_authenticated %}
+                    <h3><b>  </b></h3>
+                    {% else %}
+                    <h4><b> Please Login To Watch Cv Or Jobcircular </b></h4>
+                    {% endif %}
                     <h1><b>Welcome to SWE alumni</b></h1>
+                   {% if user.is_authenticated %}
                    <button type="button" onclick=" window.location.href= {% url 'cv_catagory' %}" class="btn btn-dark">CV or Resume</button>
                     <button type="button" onclick=" window.location.href= {% url 'job_list' %}" class="btn btn-dark">Job Circular</button>
+                   {% endif %}
                 </div>
                 <img src="{% static 'homepage_photo/diu.jpg' %}" alt="Flower1" width="10000" height="10000">
             </div>
             <div class="carousel-item">
               <div class="carousel-caption">
+                  {% if user.is_authenticated %}
+                    <h3><b>  </b></h3>
+                    {% else %}
+                    <h4><b> Please Login To Watch Cv Or Jobcircular </b></h4>
+                    {% endif %}
                     <h1><b>Welcome to SWE alumni</b></h1>
+                  {% if user.is_authenticated %}
                    <button type="button" onclick=" window.location.href= {% url 'cv_catagory' %}" class="btn btn-dark">CV or Resume</button>
                     <button type="button" onclick=" window.location.href= {% url 'job_list' %}" class="btn btn-dark">Job Circular</button>
+                  {% endif %}
                 </div>
                 <img src="{% static 'homepage_photo/all.jpg' %}" alt="Flower2" width="10000" height="10000">
             </div>
             <div class="carousel-item">
               <div class="carousel-caption">
+                  {% if user.is_authenticated %}
+                    <h3><b>  </b></h3>
+                    {% else %}
+                    <h4><b> Please Login To Watch Cv Or Jobcircular </b></h4>
+                    {% endif %}
                     <h1><b>Welcome to SWE alumni</b></h1>
+                    {% if user.is_authenticated %}
                    <button type="button" onclick=" window.location.href= {% url 'cv_catagory' %}" class="btn btn-dark">CV or Resume</button>
                     <button type="button" onclick=" window.location.href= {% url 'job_list' %}" class="btn btn-dark">Job Circular</button>
+                    {% endif %}
                 </div>
                 <img src="{% static 'homepage_photo/all-permanent.jpg' %}" alt="Flower3" width="10" height="10">
             </div>

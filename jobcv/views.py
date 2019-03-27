@@ -70,9 +70,9 @@ def upload_cv(request):
     if ccup ==str(1):
 
         if request.method == 'POST' and request.FILES['upload_file']:
-
+            imageobj = get_object_or_404(Profile, user= request.user)
+            image=imageobj.image
             post=Cv()
-            print('hi')
             position=request.POST['position']
             print(position)
             catagory= get_object_or_404(CvCatagory, name=request.POST['position'])
@@ -81,6 +81,7 @@ def upload_cv(request):
             post.skill= request.POST.get('skill')
             post.email= request.POST.get('email')
             post.file= request.FILES['upload_file']
+            post.image=image
             post.save()
 
             return redirect('home')

@@ -29,9 +29,8 @@ List by catagory
     <div class="col-md-8">
       <div class="card-body">
           <h4>My skill:  {{ cvs.skill }}</h4>
-          <p class="card-text"><a href="{{ cvs.file.url }}"> Click here for download CV or Resume </a></p>
-        <p class="card-text"> To watch my profile! Click <a href="{% url 'show_profile' pk=cvs.user.pk %}">{{ cvs.user }} </a> </p>
-        <p class="card-text"><small class="text-muted">published: {{ cvs.publish_date }}</small></p>
+          <p class="card-text"><a href="{{ cvs.file.url }}"> Click here for download CV or Resume </a></p><p class="card-text"> To watch my profile! Click <a href="{% url 'show_profile' pk=cvs.user.pk %}">{{ cvs.user }} </a> </p>
+          <p class="card-text"><small class="text-muted">published: {{ cvs.publish_date }}</small></p>
       </div>
     </div>
       </div>

@@ -100,16 +100,15 @@ def create_profile (request):
         return redirect('home')
     else:
         return render(request,templates)
-
 @login_required
 def show_profile (request,pk):
     templates= 'authenticate/show_profile.html'
     cv = Cv.objects.all()
-
-    check_create_user_profile= get_object_or_404(Profile,user= request.user )
+    check_create_user_profile= get_object_or_404(Profile, user= request.user )
     ccup=check_create_user_profile.page_permission
     if ccup ==str(1):
         profile=Profile.objects.filter(user__pk=pk)
+        print(profile)
         try:
             p_name=profile.full_name
         except:
